@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20252_lab2
+package co.edu.udea.compumovil.gr01_20252_lab2.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -25,6 +25,7 @@ import co.edu.udea.compumovil.gr01_20252_lab2.Article
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ArticleDetailScreen(
+
     article: Article,
     onBackClick: () -> Unit,
     onShareClick: (Article) -> Unit,
