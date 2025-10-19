@@ -1,4 +1,4 @@
 package co.edu.udea.compumovil.gr01_20252_lab2.workers
 
-class WorkManagerSetup {
+class SyncArticlesWorker {
 }
