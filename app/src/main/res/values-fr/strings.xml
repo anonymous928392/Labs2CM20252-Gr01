@@ -1,2 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+
+<resources>
+    <string name="app_name">Application de Nouvelles</string>
+
+    <!-- Navigation -->
+    <string name="home">Accueil</string>
+    <string name="trending">Tendances</string>
+    <string name="favorites">Favoris</string>
+    <string name="settings">Paramètres</string>
+
+    <!-- Categories -->
+    <string name="all_categories">Toutes</string>
+    <string name="technology">Technologie</string>
+    <string name="sports">Sports</string>
+    <string name="business">Affaires</string>
+    <string name="entertainment">Divertissement</string>
+    <string name="health">Santé</string>
+    <string name="science">Science</string>
+
+    <!-- Actions -->
+    <string name="refresh">Actualiser</string>
+    <string name="retry">Réessayer</string>
+    <string name="share">Partager</string>
+    <string name="save">Enregistrer</string>
+    <string name="delete">Supprimer</string>
+    <string name="search">Rechercher</string>
+
+    <!-- Messages -->
+    <string name="loading_news">Chargement des nouvelles...</string>
+    <string name="no_articles">Aucun article disponible</string>
+    <string name="error_loading">Erreur lors du chargement des nouvelles</string>
+    <string name="network_error">Erreur de connexion. Vérifiez votre Internet.</string>
+    <string name="news_updated">Nouvelles mises à jour</string>
+    <string name="saved_successfully">Enregistré avec succès</string>
+
+    <!-- Article Details -->
+    <string name="read_more">Lire la suite</string>
+    <string name="published_on">Publié le %s</string>
+    <string name="by_author">Par %s</string>
+    <string name="back">Retour</string>
+    <string name="favorite">Favori</string>
+
+    <!-- Work Manager -->
+    <string name="syncing_news">Synchronisation des nouvelles...</string>
+    <string name="sync_complete">Synchronisation terminée</string>
+    <string name="new_articles_available">%d nouveaux articles disponibles</string>
+
+</resources>

@@ -1,2 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+
+<resources>
+    <string name="app_name">News App</string>
+
+    <!-- Navigation -->
+    <string name="home">Home</string>
+    <string name="trending">Trending</string>
+    <string name="favorites">Favorites</string>
+    <string name="settings">Settings</string>
+
+    <!-- Categories -->
+    <string name="all_categories">All</string>
+    <string name="technology">Technology</string>
+    <string name="sports">Sports</string>
+    <string name="business">Business</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="health">Health</string>
+    <string name="science">Science</string>
+
+    <!-- Actions -->
+    <string name="refresh">Refresh</string>
+    <string name="retry">Retry</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+
+    <!-- Messages -->
+    <string name="loading_news">Loading news...</string>
+    <string name="no_articles">No articles available</string>
+    <string name="error_loading">Error loading news</string>
+    <string name="network_error">Connection error. Check your internet.</string>
+    <string name="news_updated">News updated</string>
+    <string name="saved_successfully">Saved successfully</string>
+
+    <!-- Article Details -->
+    <string name="read_more">Read more</string>
+    <string name="published_on">Published on %s</string>
+    <string name="by_author">By %s</string>
+    <string name="back">Back</string>
+    <string name="favorite">Favorite</string>
+
+    <!-- Work Manager -->
+    <string name="syncing_news">Syncing news...</string>
+    <string name="sync_complete">Sync complete</string>
+    <string name="new_articles_available">%d new articles available</string>
+
+</resources>
