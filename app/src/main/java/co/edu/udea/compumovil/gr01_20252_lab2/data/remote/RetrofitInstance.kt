@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitInstance {
 
-    // ⚠️ CAMBIAR ESTA URL POR LA DE TU MOCKAPI
-    private const val BASE_URL = "https://YOUR_MOCKAPI_ID.mockapi.io/api/v1/"
+    // ⚠ CAMBIAR ESTA URL POR LA DE TU MOCKAPI
+    private const val BASE_URL = "https://68f50dbcb16eb6f468363f80.mockapi.io/api/v1/"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
