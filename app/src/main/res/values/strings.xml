@@ -1,47 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Labs2CM20252-Gr01</string>
+    <string name="app_name">JetNews</string>
 
-    <!-- Navigation -->
-    <string name="home">Inicio</string>
-    <string name="trending">Tendencias</string>
-    <string name="favorites">Favoritos</string>
-    <string name="settings">Configuración</string>
-
-    <!-- Categories -->
-    <string name="all_categories">Todas</string>
-    <string name="technology">Tecnología</string>
-    <string name="sports">Deportes</string>
-    <string name="business">Negocios</string>
-    <string name="entertainment">Entretenimiento</string>
-    <string name="health">Salud</string>
-    <string name="science">Ciencia</string>
-
-    <!-- Actions -->
-    <string name="refresh">Actualizar</string>
-    <string name="retry">Reintentar</string>
-    <string name="share">Compartir</string>
-    <string name="save">Guardar</string>
-    <string name="delete">Eliminar</string>
-    <string name="search">Buscar</string>
-
-    <!-- Messages -->
-    <string name="loading_news">Cargando noticias...</string>
+    <!-- Home Screen -->
+    <string name="sync_articles">Sincronizar Artículos</string>
     <string name="no_articles">No hay artículos disponibles</string>
-    <string name="error_loading">Error al cargar las noticias</string>
-    <string name="network_error">Error de conexión. Verifica tu internet.</string>
-    <string name="news_updated">Noticias actualizadas</string>
-    <string name="saved_successfully">Guardado exitosamente</string>
+    <string name="retry">Reintentar</string>
+    <string name="all_categories">Todos</string>
 
-    <!-- Article Details -->
-    <string name="read_more">Leer más</string>
-    <string name="published_on">Publicado el %s</string>
-    <string name="by_author">Por %s</string>
+    <!-- Detail Screen -->
+    <string name="article_detail">Detalle del Artículo</string>
     <string name="back">Atrás</string>
     <string name="favorite">Favorito</string>
+    <string name="share">Compartir</string>
 
+    <!-- Categories -->
+    <string name="category_technology">Tecnología</string>
+    <string name="category_sports">Deportes</string>
+    <string name="category_business">Negocios</string>
+    <string name="category_health">Salud</string>
+    <string name="category_entertainment">Entretenimiento</string>
 
-    <!-- Work Manager -->
-    <string name="syncing_news">Sincronizando noticias...</string>
-    <string name="sync_complete">Sincronización completa</string>
-    <string name="new_articles_available">%d nuevos artículos disponibles</string>
+    <!-- Common -->
+    <string name="loading">Cargando…</string>
+    <string name="error_generic">Ocurrió un error</string>
+    <string name="error_network">Error de red. Por favor verifica tu conexión.</string>
+
+    <!-- WorkManager -->
+    <string name="sync_notification_title">Sincronizando artículos</string>
+    <string name="sync_notification_description">Descargando las últimas noticias…</string>
+    <string name="sync_success">Artículos sincronizados exitosamente</string>
+    <string name="sync_failed">Falló la sincronización de artículos</string>
 </resources>
