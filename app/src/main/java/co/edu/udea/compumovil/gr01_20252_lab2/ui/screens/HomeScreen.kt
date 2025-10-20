@@ -29,6 +29,7 @@ import java.util.*
 @Composable
 fun HomeScreen(
     onArticleClick: (String) -> Unit,
+    onSettingsClick: () -> Unit = {},
     viewModel: NewsViewModel = viewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -42,6 +43,12 @@ fun HomeScreen(
                         Icon(
                             imageVector = Icons.Default.Refresh,
                             contentDescription = stringResource(R.string.sync_articles)
+                        )
+                    }
+                    IconButton(onClick = onSettingsClick) {
+                        Icon(
+                            imageVector = Icons.Default.Settings,
+                            contentDescription = "Configuración"
                         )
                     }
                 }

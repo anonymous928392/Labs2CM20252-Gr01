@@ -81,6 +81,9 @@ dependencies {
    // DataStore
     implementation(libs.datastore.preferences)
 
+    // Material Icons Extended (iconos adicionales)
+    implementation("androidx.compose.material:material-icons-extended:1.7.5")
+
 
 
     testImplementation(libs.junit)

@@ -31,4 +31,15 @@
     <string name="sync_notification_description">Downloading latest news…</string>
     <string name="sync_success">Articles synced successfully</string>
     <string name="sync_failed">Failed to sync articles</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="appearance">Appearance</string>
+    <string name="theme">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">Follow system</string>
+    <string name="select_theme">Select theme</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
 </resources>
