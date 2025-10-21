@@ -25,8 +25,29 @@ class NewsRepository(
 
     suspend fun syncArticles(): Result<Unit> = withContext(Dispatchers.IO) {
         try {
+            // Guardar IDs de artículos favoritos antes de borrar
+            val favoriteIds = dao.getAllArticles().let { flow ->
+                val allArticles = mutableListOf<Article>()
+                flow.collect { articles -> allArticles.addAll(articles) }
+                allArticles.filter { it.isFavorite }.map { it.id }
+            }
+            
+            // Obtener nuevos artículos de la API
             val articles = api.getArticles()
-            dao.insertArticles(articles)
+            
+            // Borrar artículos antiguos
+            dao.deleteAllArticles()
+            
+            // Insertar nuevos artículos preservando el estado de favorito
+            val articlesWithFavorites = articles.map { article ->
+                if (article.id in favoriteIds) {
+                    article.copy(isFavorite = true)
+                } else {
+                    article
+                }
+            }
+            dao.insertArticles(articlesWithFavorites)
+            
             Result.success(Unit)
         } catch (e: Exception) {
             Result.failure(e)
@@ -59,10 +80,30 @@ class NewsRepository(
 
     suspend fun refreshArticles(): Result<List<Article>> = withContext(Dispatchers.IO) {
         try {
+            // Guardar IDs de artículos favoritos antes de borrar
+            val favoriteIds = dao.getAllArticles().let { flow ->
+                val allArticles = mutableListOf<Article>()
+                flow.collect { articles -> allArticles.addAll(articles) }
+                allArticles.filter { it.isFavorite }.map { it.id }
+            }
+            
+            // Obtener nuevos artículos de la API
             val articles = api.getArticles()
+            
+            // Borrar artículos antiguos
             dao.deleteAllArticles()
-            dao.insertArticles(articles)
-            Result.success(articles)
+            
+            // Insertar nuevos artículos preservando el estado de favorito
+            val articlesWithFavorites = articles.map { article ->
+                if (article.id in favoriteIds) {
+                    article.copy(isFavorite = true)
+                } else {
+                    article
+                }
+            }
+            dao.insertArticles(articlesWithFavorites)
+            
+            Result.success(articlesWithFavorites)
         } catch (e: Exception) {
             Result.failure(e)
         }
