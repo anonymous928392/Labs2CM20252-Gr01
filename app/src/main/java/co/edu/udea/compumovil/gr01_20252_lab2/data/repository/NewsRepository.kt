@@ -26,11 +26,7 @@ class NewsRepository(
     suspend fun syncArticles(): Result<Unit> = withContext(Dispatchers.IO) {
         try {
             // Guardar IDs de artículos favoritos antes de borrar
-            val favoriteIds = dao.getAllArticles().let { flow ->
-                val allArticles = mutableListOf<Article>()
-                flow.collect { articles -> allArticles.addAll(articles) }
-                allArticles.filter { it.isFavorite }.map { it.id }
-            }
+            val favoriteIds = dao.getFavoriteArticleIds()
             
             // Obtener nuevos artículos de la API
             val articles = api.getArticles()
@@ -81,11 +77,7 @@ class NewsRepository(
     suspend fun refreshArticles(): Result<List<Article>> = withContext(Dispatchers.IO) {
         try {
             // Guardar IDs de artículos favoritos antes de borrar
-            val favoriteIds = dao.getAllArticles().let { flow ->
-                val allArticles = mutableListOf<Article>()
-                flow.collect { articles -> allArticles.addAll(articles) }
-                allArticles.filter { it.isFavorite }.map { it.id }
-            }
+            val favoriteIds = dao.getFavoriteArticleIds()
             
             // Obtener nuevos artículos de la API
             val articles = api.getArticles()

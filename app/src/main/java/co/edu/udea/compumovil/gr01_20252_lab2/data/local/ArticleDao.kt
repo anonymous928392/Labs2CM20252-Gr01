@@ -19,6 +19,9 @@ interface ArticleDao {
     @Query("SELECT * FROM articles WHERE isFavorite = 1 ORDER BY publishedAt DESC")
     fun getFavoriteArticles(): Flow<List<Article>>
 
+    @Query("SELECT id FROM articles WHERE isFavorite = 1")
+    suspend fun getFavoriteArticleIds(): List<String>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertArticles(articles: List<Article>)
 
