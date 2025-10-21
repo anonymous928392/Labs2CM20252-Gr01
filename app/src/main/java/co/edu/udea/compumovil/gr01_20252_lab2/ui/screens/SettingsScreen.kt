@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import co.edu.udea.compumovil.gr01_20252_lab2.R
 import co.edu.udea.compumovil.gr01_20252_lab2.data.preferences.ThemeMode
+import co.edu.udea.compumovil.gr01_20252_lab2.ui.components.TooltipIconButton
 import co.edu.udea.compumovil.gr01_20252_lab2.ui.viewmodel.SettingsViewModel
 
 
@@ -31,12 +32,12 @@ fun SettingsScreen(
             TopAppBar(
                 title = { Text(stringResource(R.string.settings)) },
                 navigationIcon = {
-                    IconButton(onClick = onNavigateBack) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowBack,
-                            contentDescription = stringResource(R.string.back)
-                        )
-                    }
+                    TooltipIconButton(
+                        onClick = onNavigateBack,
+                        icon = Icons.Default.ArrowBack,
+                        contentDescription = stringResource(R.string.back),
+                        tooltipText = stringResource(R.string.back_tooltip)
+                    )
                 }
             )
         }
