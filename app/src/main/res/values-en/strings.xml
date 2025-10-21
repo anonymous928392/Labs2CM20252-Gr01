@@ -11,6 +11,7 @@
     <!-- Detail Screen -->
     <string name="article_detail">Article Detail</string>
     <string name="back">Back</string>
+    <string name="back_tooltip">Return to article list</string>
     <string name="favorite">Favorite</string>
     <string name="share">Share</string>
 
@@ -25,6 +26,10 @@
     <string name="loading">Loading…</string>
     <string name="error_generic">An error occurred</string>
     <string name="error_network">Network error. Please check your connection.</string>
+    <string name="retry_tooltip">Retry loading articles</string>
+    <string name="add_favorite">Add to favorites</string>
+    <string name="remove_favorite">Remove from favorites</string>
+    <string name="share_article">Share article</string>
 
     <!-- WorkManager -->
     <string name="sync_notification_title">Syncing articles</string>

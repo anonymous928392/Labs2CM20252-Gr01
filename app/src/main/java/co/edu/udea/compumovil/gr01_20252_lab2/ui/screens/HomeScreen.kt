@@ -19,6 +19,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import co.edu.udea.compumovil.gr01_20252_lab2.R
 import co.edu.udea.compumovil.gr01_20252_lab2.data.model.Article
+import co.edu.udea.compumovil.gr01_20252_lab2.ui.components.TooltipButton
+import co.edu.udea.compumovil.gr01_20252_lab2.ui.components.TooltipIconButton
 import co.edu.udea.compumovil.gr01_20252_lab2.ui.viewmodel.NewsViewModel
 import co.edu.udea.compumovil.gr01_20252_lab2.util.CategoryMapper
 import coil.compose.AsyncImage
@@ -39,18 +41,18 @@ fun HomeScreen(
             TopAppBar(
                 title = { Text(stringResource(R.string.app_name)) },
                 actions = {
-                    IconButton(onClick = { viewModel.syncNow() }) {
-                        Icon(
-                            imageVector = Icons.Default.Refresh,
-                            contentDescription = stringResource(R.string.sync_articles)
-                        )
-                    }
-                    IconButton(onClick = onSettingsClick) {
-                        Icon(
-                            imageVector = Icons.Default.Settings,
-                            contentDescription = "Configuración"
-                        )
-                    }
+                    TooltipIconButton(
+                        onClick = { viewModel.syncNow() },
+                        icon = Icons.Default.Refresh,
+                        contentDescription = stringResource(R.string.sync_articles),
+                        tooltipText = stringResource(R.string.sync_articles)
+                    )
+                    TooltipIconButton(
+                        onClick = onSettingsClick,
+                        icon = Icons.Default.Settings,
+                        contentDescription = stringResource(R.string.settings),
+                        tooltipText = stringResource(R.string.settings)
+                    )
                 }
             )
         }
@@ -265,7 +267,10 @@ fun ErrorMessage(
             color = MaterialTheme.colorScheme.error
         )
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = onRetry) {
+        TooltipButton(
+            onClick = onRetry,
+            tooltipText = stringResource(R.string.retry_tooltip)
+        ) {
             Text(stringResource(R.string.retry))
         }
     }

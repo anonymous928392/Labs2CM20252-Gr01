@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import co.edu.udea.compumovil.gr01_20252_lab2.R
 import co.edu.udea.compumovil.gr01_20252_lab2.data.model.Article
+import co.edu.udea.compumovil.gr01_20252_lab2.ui.components.TooltipIconButton
 import co.edu.udea.compumovil.gr01_20252_lab2.ui.viewmodel.DetailViewModel
 import co.edu.udea.compumovil.gr01_20252_lab2.util.CategoryMapper
 import coil.compose.AsyncImage
@@ -39,36 +40,39 @@ fun DetailScreen(
             TopAppBar(
                 title = { Text(stringResource(R.string.article_detail)) },
                 navigationIcon = {
-                    IconButton(onClick = onNavigateBack) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowBack,
-                            contentDescription = stringResource(R.string.back)
-                        )
-                    }
+                    TooltipIconButton(
+                        onClick = onNavigateBack,
+                        icon = Icons.Default.ArrowBack,
+                        contentDescription = stringResource(R.string.back),
+                        tooltipText = stringResource(R.string.back_tooltip)
+                    )
                 },
                 actions = {
                     article?.let { art ->
-                        IconButton(onClick = { viewModel.toggleFavorite(art) }) {
-                            Icon(
-                                imageVector = if (art.isFavorite)
-                                    Icons.Default.Favorite
-                                else
-                                    Icons.Default.FavoriteBorder,
-                                contentDescription = stringResource(R.string.favorite),
-                                tint = if (art.isFavorite)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-
-                    IconButton(onClick = { /* Share */ }) {
-                        Icon(
-                            imageVector = Icons.Default.Share,
-                            contentDescription = stringResource(R.string.share)
+                        TooltipIconButton(
+                            onClick = { viewModel.toggleFavorite(art) },
+                            icon = if (art.isFavorite)
+                                Icons.Default.Favorite
+                            else
+                                Icons.Default.FavoriteBorder,
+                            contentDescription = stringResource(R.string.favorite),
+                            tooltipText = if (art.isFavorite)
+                                stringResource(R.string.remove_favorite)
+                            else
+                                stringResource(R.string.add_favorite),
+                            tint = if (art.isFavorite)
+                                MaterialTheme.colorScheme.primary
+                            else
+                                MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
+
+                    TooltipIconButton(
+                        onClick = { /* Share */ },
+                        icon = Icons.Default.Share,
+                        contentDescription = stringResource(R.string.share),
+                        tooltipText = stringResource(R.string.share_article)
+                    )
                 }
             )
         }

@@ -16,6 +16,7 @@ import co.edu.udea.compumovil.gr01_20252_lab2.R
 import co.edu.udea.compumovil.gr01_20252_lab2.data.preferences.ThemeMode
 import co.edu.udea.compumovil.gr01_20252_lab2.ui.viewmodel.SettingsViewModel
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(

@@ -11,6 +11,7 @@
     <!-- Detail Screen -->
     <string name="article_detail">Detalle del Artículo</string>
     <string name="back">Atrás</string>
+    <string name="back_tooltip">Volver a la lista de artículos</string>
     <string name="favorite">Favorito</string>
     <string name="share">Compartir</string>
 
@@ -25,6 +26,10 @@
     <string name="loading">Cargando…</string>
     <string name="error_generic">Ocurrió un error</string>
     <string name="error_network">Error de red. Por favor verifica tu conexión.</string>
+    <string name="retry_tooltip">Volver a intentar cargar los artículos</string>
+    <string name="add_favorite">Agregar a favoritos</string>
+    <string name="remove_favorite">Quitar de favoritos</string>
+    <string name="share_article">Compartir artículo</string>
 
     <!-- WorkManager -->
     <string name="sync_notification_title">Sincronizando artículos</string>
